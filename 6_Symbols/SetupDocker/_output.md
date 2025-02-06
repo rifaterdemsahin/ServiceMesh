@@ -30,3 +30,19 @@
  => => exporting layers                                                                                                                     1.1s
  => => writing image sha256:f28563ece013e51771572d5beb5ffc94bb4d408905b806689c2f9a448af2cba8                                                0.0s
  => => naming to docker.io/library/your-service-mesh                           
+
+
+ ---
+ @rifaterdemsahin ➜ /workspaces/ServiceMesh/6_Symbols/SetupDocker (main) $ docker run -p 5000:5000 your-service-mesh
+ * Serving Flask app 'main'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.0.2:5000
+Press CTRL+C to quit
+172.17.0.1 - - [06/Feb/2025 11:55:26] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [06/Feb/2025 11:55:26] "GET /favicon.ico HTTP/1.1" 404 -
+^C@rifaterdemsahin ➜ /workspaces/ServiceMesh/6_Symbols/SetupDocker (main) $ 
+
+
