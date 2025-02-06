@@ -1,125 +1,36 @@
-Here's a markdown file for implementing a service mesh in a Docker environment running in GitHub Codespaces, with steps and terminal output:
+# Service Mech
 
-```markdown
-# 🕸️ Service Mesh Implementation in Docker Environment on Codespaces
+- Reason : CV as Code
+- Purpose : Display your skills in a tech interview using Implementing ServiceMesh
+- Map : Action Plan includes the self learning template
 
-## Prerequisites
-1. 🐳 **Docker** is installed and running in Codespaces.
-2. 🛠️ **kubectl** and **helm** installed.
-3. 🚀 **Istio** or any other service mesh is chosen (we’ll use Istio as an example).
+- ![WatchMe 1](watchme_1.mp4)
 
----
 
-## Steps
+## AI First Approach
+- Document the prompts and commit the updates while progressing handson
+- Document all the stages of research and development to inspire self learning process
 
-### 1. Clone the Repository
-Open the terminal in GitHub Codespaces and run:
-```bash
-git clone https://github.com/your-service-mesh-repo.git
-cd your-service-mesh-repo
-```
-_Output_:
-```bash
-Cloning into 'your-service-mesh-repo'...
-```
+## Self Learning Project 
 
----
+Documentation for the Folder Structure
+| Section             | Description                                                                                                               | Action              |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------------|
+| **🚀 Journey**      | *Visual Story Explained with Steps* - A self-learning guide from beginner to skilled in visual storytelling.              | Feel it |
+| **🌍 Real**         | *The Job That Starts with Objective and Key Results* - Sets goals and objectives, aligning tasks with measurable results. | Aim at it   |
+| **🌳 Environments** | *The Roadmap and Use Cases* - A roadmap with learning modules and real-world use cases to apply new skills.            | Create it |
+| **🌌 Imaginary/UI**    | *What You Learn on the Road* - Tracks concepts, theories, and skills acquired, promoting continuous growth.            | Imagine it |
+| **📐 Formulas**     | *The Guides That Are Mentioned* - Essential guides and formulas for understanding and solving project challenges.     |  Learn from it |
+| **🔣 Symbols**      | *Code That Is Implemented* - Includes code snippets and examples to demonstrate each concept practically.              |  Execute it   |
+| **🌀 Semblance**    | *Errors Found in the Process* - Documents mistakes and solutions, making errors valuable learning opportunities.       |  Fix it   |
 
-### 2. Setup Docker Environment
-Run Docker Compose to spin up services:
-```bash
-docker-compose up -d
-```
-_Output_:
-```bash
-Creating network "service-mesh_default" with the default driver
-Creating service-mesh_service_1 ... done
-Creating service-mesh_service_2 ... done
-```
+Practical Terminal Commands From Your Workstation
+- Use CodeSpaces AI generated commit messages
 
----
 
-### 3. Install Istio CLI
-In the terminal, install Istio CLI:
-```bash
-curl -L https://istio.io/downloadIstio | sh -
-cd istio-<version>/bin
-export PATH=$PWD:$PATH
-```
-_Output_:
-```bash
-Downloading Istio version x.x.x...
-Istio is successfully installed.
-```
+### Contributor
+- https://www.linkedin.com/in/rifaterdemsahin/
 
----
+## License
 
-### 4. Deploy Istio in Kubernetes
-Run the following command to install Istio:
-```bash
-istioctl install --set profile=demo -y
-```
-_Output_:
-```bash
-✔ Istio core installed
-✔ Istiod installed
-✔ Ingress gateways installed
-✔ Installation complete
-```
-
----
-
-### 5. Label the Namespace
-Apply the label for automatic proxy injection:
-```bash
-kubectl label namespace default istio-injection=enabled
-```
-_Output_:
-```bash
-namespace/default labeled
-```
-
----
-
-### 6. Deploy Application with Sidecars
-Deploy your application into the Kubernetes cluster:
-```bash
-kubectl apply -f <your-app-manifest>.yaml
-```
-_Output_:
-```bash
-service/my-service created
-deployment.apps/my-app created
-```
-
----
-
-### 7. Verify Sidecar Injection
-Check if the sidecar containers are running:
-```bash
-kubectl get pods
-```
-_Output_:
-```bash
-NAME                           READY   STATUS    RESTARTS   AGE
-my-app-abcde12345               2/2     Running   0          1m
-```
-
----
-
-### 8. Access Application
-Test the service mesh:
-```bash
-kubectl exec --stdin --tty <pod-name> -c <container-name> -- /bin/bash
-curl http://my-service:8080
-```
-_Output_:
-```bash
-Hello from the service mesh!
-```
-
----
-
-### 🎉 Congratulations! Your Service Mesh is Now Running in Codespaces with Docker!
-
-Check the logs and observe traffic behavior across services!
+This project is licensed under the [MIT License](LICENSE).
