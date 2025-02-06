@@ -1,0 +1,27 @@
+Minikube itself does not come with a built-in container registry. However, it provides the ability to run a local Docker registry within the Minikube cluster for development and testing purposes.
+
+To set up a local Docker registry in Minikube, you can follow these steps:
+
+Start Minikube:
+
+minikube start
+
+Enable the Ingress addon:
+
+minikube addons enable ingress
+
+Deploy a Docker registry:
+
+kubectl create namespace registry
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/baremetal/deploy.yaml
+kubectl apply -f https://gist.githubusercontent.com/vaijab/1d7be9712edc4d89a289edb7bdc3f6b4/raw/1d7be9712edc4d89a289edb7bdc3f6b4/registry.yaml
+
+Expose the registry:
+
+kubectl port-forward --namespace registry svc/registry 5000:80
+
+After setting up the local registry, you can push and pull images to it using the address localhost:5000.
+
+Please note that these steps are intended for development and testing environments and may not be suitable for production use. For production, it's recommended to use a more robust solution like Docker Hub, Google Container Registry, or another cloud-based container registry service.
+
+If you need further assistance or more detailed steps, please let me know!
